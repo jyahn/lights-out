@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Board from "./Board"
 
 class Game extends Component {
@@ -20,15 +20,23 @@ class Game extends Component {
 
   render() {
     console.log("state in game", this.state)
-    return (<div >
-      <h1> Choose your difficulty: </h1>
-      <button onClick={(e) => { this.handleClick(e, 'easy') }}>Easy</button>
-      <button onClick={(e) => { this.handleClick(e, 'medium') }}>Medium</button>
-      <button onClick={(e) => { this.handleClick(e, 'hard') }}>Hard</button>
-      {this.state.mode === 'easy' ? < Board nrows={4} ncols={4} numClicks={4} /> : null}
-      {this.state.mode === 'medium' ? < Board nrows={5} ncols={5} numClicks={5} /> : null}
-      {this.state.mode === 'hard' ? < Board nrows={5} ncols={5} numClicks={7} /> : null}
-    </div >
+    return (
+      <Fragment>
+        <Fragment>
+          {this.state.mode === '' ?
+            <div>
+              <h1> Choose your difficulty: </h1>
+              <button onClick={(e) => { this.handleClick(e, 'easy') }}>Easy</button>
+              <button onClick={(e) => { this.handleClick(e, 'medium') }}>Medium</button>
+              <button onClick={(e) => { this.handleClick(e, 'hard') }}>Hard</button>
+            </div> : null}
+        </Fragment>
+        <div>
+          {this.state.mode === 'easy' ? < Board nrows={4} ncols={4} numClicks={4} /> : null}
+          {this.state.mode === 'medium' ? < Board nrows={5} ncols={5} numClicks={5} /> : null}
+          {this.state.mode === 'hard' ? < Board nrows={5} ncols={5} numClicks={7} /> : null}
+        </div >
+      </Fragment>
     )
   }
 }
