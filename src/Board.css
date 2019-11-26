@@ -72,7 +72,7 @@
 button:focus {outline:0;}
 
 table {
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 @keyframes flicker {
