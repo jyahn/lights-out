@@ -1,8 +1,8 @@
 .Cell {
-  /* height: 12vw;
-  width: 12vw; */
-  height: 22vmin;
-  width: 22vmin;
+  height: 11vw;
+  width: 11vw;
+  /* height: 22vmin;
+  width: 22vmin; */
   background-color: gray;
   border-radius: 8px;
 }
