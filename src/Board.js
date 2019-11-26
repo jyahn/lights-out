@@ -126,7 +126,6 @@ class Board extends Component {
     else {
       return (
         <div>
-          <h1>Can you beat the game?</h1>
           <table>
             <tbody>
               {this.state.board.map((row, ridx) => (
