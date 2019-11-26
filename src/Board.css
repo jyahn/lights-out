@@ -24,11 +24,9 @@
 
 #reset-button{
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateX(-50%);
-  /* width: 150px; */
   font-size: 2.5vmin;
-  /* text-shadow: white 0px 0px 20px; */
   appearance: none;
   background: linear-gradient(to bottom, #eec748, #DBAF49);
   border: none;
@@ -36,7 +34,7 @@
   border-radius: 2em;
   padding: .6em 1em;
   overflow: hidden;
-  /* user-select: none; */
+  user-select: none;
   cursor: pointer;
   z-index: 1;
   box-shadow: 0 0 1em rgba(white, .2);
