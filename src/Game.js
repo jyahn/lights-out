@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Board from "./Board"
+import './Board.css';
 
 class Game extends Component {
   constructor(props) {
@@ -31,11 +32,13 @@ class Game extends Component {
       <Fragment>
         <Fragment>
           {this.state.mode === '' ?
-            <div>
-              <h1> Choose your difficulty: </h1>
-              <button onClick={(e) => { this.handleClick(e, 'easy') }}>Easy</button>
-              <button onClick={(e) => { this.handleClick(e, 'medium') }}>Medium</button>
-              <button onClick={(e) => { this.handleClick(e, 'hard') }}>Hard</button>
+            <div className="container">
+              <div className="fluorescent-text" id="difficulty"> Choose your difficulty: </div>
+              <div className="buttons">
+                <button className="flickering-button" id="easy-button" onClick={(e) => { this.handleClick(e, 'easy') }}>Easy</button>
+                <button className="flickering-button" id="medium-button" onClick={(e) => { this.handleClick(e, 'medium') }}>Medium</button>
+                <button className="flickering-button" id="hard-button" onClick={(e) => { this.handleClick(e, 'hard') }}>Hard</button>
+              </div>
             </div> : null}
         </Fragment>
         <div>

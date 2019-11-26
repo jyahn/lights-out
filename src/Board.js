@@ -118,9 +118,9 @@ class Board extends Component {
   render() {
     if (this.isFalse(this.state.board)) {
       return (
-        <div id = "win-container">
-          <div id="congratulations">Congratulations! You win.</div>
-          <div id ="button-container"> <button id="reset-button" onClick={this.props.resetGame}>Restart Game</button></div>
+        <div className="container">
+          <div className="fluorescent-text" id="congratulations">Congratulations! You win.</div>
+          <button className = "flickering-button" id="reset-button" onClick={this.props.resetGame}>Restart Game</button>
         </div>
       )
     }
