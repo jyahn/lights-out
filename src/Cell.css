@@ -1,8 +1,8 @@
 .Cell {
-  height: 7vw;
-  width: 7vw;
+  height: 12vw;
+  width: 12vw;
   background-color: gray;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .Cell-lit {
