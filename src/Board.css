@@ -71,6 +71,10 @@
 
 button:focus {outline:0;}
 
+table {
+  margin-top: 10vh;
+}
+
 @keyframes flicker {
 	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
 		opacity: .99;
