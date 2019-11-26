@@ -1,5 +1,5 @@
 .container{
-  height: 100vh;
+  height: 80vh;
 }
 
 .fluorescent-text{
@@ -72,7 +72,7 @@
 button:focus {outline:0;}
 
 table {
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 @keyframes flicker {
