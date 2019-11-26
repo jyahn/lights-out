@@ -8,12 +8,19 @@ class Game extends Component {
       mode: ""
     }
     this.handleClick = this.handleClick.bind(this);
+    this.resetGame = this.resetGame.bind(this);
   }
 
   handleClick(evt, mode) {
     evt.preventDefault();
     this.setState({
       mode
+    })
+  }
+
+  resetGame() {
+    this.setState({
+      mode: ''
     })
   }
 
@@ -32,9 +39,9 @@ class Game extends Component {
             </div> : null}
         </Fragment>
         <div>
-          {this.state.mode === 'easy' ? < Board nrows={4} ncols={4} numClicks={4} /> : null}
-          {this.state.mode === 'medium' ? < Board nrows={5} ncols={5} numClicks={5} /> : null}
-          {this.state.mode === 'hard' ? < Board nrows={5} ncols={5} numClicks={7} /> : null}
+          {this.state.mode === 'easy' ? < Board nrows={4} ncols={4} numClicks={4} resetGame={this.resetGame} /> : null}
+          {this.state.mode === 'medium' ? < Board nrows={5} ncols={5} numClicks={5} resetGame={this.resetGame} /> : null}
+          {this.state.mode === 'hard' ? < Board nrows={5} ncols={5} numClicks={7} resetGame={this.resetGame} /> : null}
         </div >
       </Fragment>
     )

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Cell from "./Cell";
 import './Board.css';
 
@@ -66,13 +66,11 @@ class Board extends Component {
 
 
   simulateClicks(num, board) {
-    console.log(this.props.nrows);
     let coordArr = []
     for (let i = 0; i < num; i++) {
       let firstRandCoord = Math.floor(Math.random() * this.props.nrows);
       let secondRandCoord = Math.floor(Math.random() * this.props.nrows);
       let coordToFlip = `${firstRandCoord}-${secondRandCoord}`;
-      console.log(coordToFlip);
       this.flipCellsAround(coordToFlip);
     }
   }
@@ -120,7 +118,10 @@ class Board extends Component {
   render() {
     if (this.isFalse(this.state.board)) {
       return (
-        <div id="congratulations">Congratulations! You win.</div>
+        <div id = "win-container">
+          <div id="congratulations">Congratulations! You win.</div>
+          <div id ="button-container"> <button id="reset-button" onClick={this.props.resetGame}>Restart Game</button></div>
+        </div>
       )
     }
     else {
