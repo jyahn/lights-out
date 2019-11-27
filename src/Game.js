@@ -42,9 +42,9 @@ class Game extends Component {
             </div> : null}
         </Fragment>
         <div>
-          {this.state.mode === 'easy' ? < Board nrows={4} ncols={4} numClicks={4} resetGame={this.resetGame} /> : null}
-          {this.state.mode === 'medium' ? < Board nrows={5} ncols={5} numClicks={5} resetGame={this.resetGame} /> : null}
-          {this.state.mode === 'hard' ? < Board nrows={5} ncols={5} numClicks={7} resetGame={this.resetGame} /> : null}
+          {this.state.mode === 'easy' ? < Board mode={this.state.mode} nrows={4} ncols={4} numClicks={4} resetGame={this.resetGame} /> : null}
+          {this.state.mode === 'medium' ? < Board mode={this.state.mode} nrows={5} ncols={5} numClicks={5} resetGame={this.resetGame} /> : null}
+          {this.state.mode === 'hard' ? < Board mode={this.state.mode} nrows={6} ncols={6} numClicks={15} resetGame={this.resetGame} /> : null}
         </div >
       </Fragment>
     )

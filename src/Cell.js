@@ -28,9 +28,19 @@ class Cell extends Component {
 
   render() {
     let classes = "Cell" + (this.props.isLit ? " Cell-lit" : "");
+    let id;
+    if (this.props.mode === 'easy') {
+      id = "easy-cell"
+    } else if (this.props.mode === 'medium') {
+      id = "med-cell"
+    } else if (this.props.mode === 'hard') {
+      id = "hard-cell"
+    }
 
     return (
-      <td className={classes} onClick={this.handleClick} />
+      <td className={classes}
+        id={id}
+        onClick={this.handleClick} />
     )
   }
 }

@@ -10,3 +10,17 @@
 .Cell-lit {
   background-color: #48e3ee;
 }
+
+#easy-cell {
+  height: 13vw;
+  width: 13vw;
+}
+#med-cell {
+  height: 11vw;
+  width: 11vw;
+}
+
+#hard-cell {
+  height: 9vw;
+  width: 9vw;
+}

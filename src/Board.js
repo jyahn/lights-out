@@ -30,11 +30,11 @@ import './Board.css';
  **/
 
 class Board extends Component {
-  static defaultProps = {
-    nrows: 5,
-    ncols: 5,
-    chanceLightStartsOn: 0.75 // 25% chance of lighting up
-  }
+  // static defaultProps = {
+  //   nrows: 5,
+  //   ncols: 5,
+  //   chanceLightStartsOn: 0.75 // 25% chance of lighting up
+  // }
 
   constructor(props) {
     super(props);
@@ -120,7 +120,7 @@ class Board extends Component {
       return (
         <div className="container">
           <div className="fluorescent-text" id="congratulations">Congratulations! You win.</div>
-          <button className = "flickering-button" id="reset-button" onClick={this.props.resetGame}>Restart Game</button>
+          <button className="flickering-button" id="reset-button" onClick={this.props.resetGame}>Restart Game</button>
         </div>
       )
     }
@@ -137,6 +137,7 @@ class Board extends Component {
                       coord={`${ridx}-${cidx}`}
                       isLit={this.state.board[ridx][cidx]}
                       flipCellsAroundMe={this.flipCellsAround}
+                      mode = {this.props.mode}
                     />)}
                 </tr>
               ))}
