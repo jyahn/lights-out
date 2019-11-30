@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Cell from "./Cell";
+import Cell from "../Cell/Cell";
 import './Board.css';
 
 
@@ -9,7 +9,6 @@ import './Board.css';
  *
  * - nrows: number of rows of board
  * - ncols: number of cols of board
- * - chanceLightStartsOn: float, chance any cell is lit at start of game
  *
  * State:
  *
@@ -30,11 +29,6 @@ import './Board.css';
  **/
 
 class Board extends Component {
-  // static defaultProps = {
-  //   nrows: 5,
-  //   ncols: 5,
-  //   chanceLightStartsOn: 0.75 // 25% chance of lighting up
-  // }
 
   constructor(props) {
     super(props);
@@ -43,24 +37,19 @@ class Board extends Component {
     };
     this.flipCellsAround = this.flipCellsAround.bind(this);
     this.simulateClicks(this.props.numClicks);
-    // TODO: set initial state
   }
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
 
   createBoard() {
     let board = [];
-    // TODO: create array-of-arrays of true/false values
     for (let i = 0; i < this.props.nrows; i++) {
       let row = [];
       board.push(row)
       for (let j = 0; j < this.props.ncols; j++) {
-        // let random = Math.random()
-        // row.push(random > this.props.chanceLightStartsOn);
         row.push(false); // all are lit off 
       }
     }
-    console.log(board);
     return board
   }
 
@@ -137,7 +126,7 @@ class Board extends Component {
                       coord={`${ridx}-${cidx}`}
                       isLit={this.state.board[ridx][cidx]}
                       flipCellsAroundMe={this.flipCellsAround}
-                      mode = {this.props.mode}
+                      mode={this.props.mode}
                     />)}
                 </tr>
               ))}
@@ -146,13 +135,6 @@ class Board extends Component {
         </div>
       )
     }
-    // if the game is won, just show a winning msg & render nothing else
-
-    // TODO
-
-    // make table board
-
-    // TODO
   }
 }
 
